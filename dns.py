@@ -5,9 +5,7 @@ from ryu.lib.packet import packet as ryu_packet
 from scapy.all import packet as scapy_packet
 from ryu.lib.packet import *
 from scapy.all import *
-import struct
 import chardet
-import re
 from ryu.base import app_manager
 from ryu.controller import ofp_event
 from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
