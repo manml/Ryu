@@ -105,8 +105,11 @@ class Controller(app_manager.RyuApp):
 			mac = eth.src
 			dpid,port = datapath.id,msg.match['in_port']
 			actions = [parser.OFPActionOutput(ofproto.OFPP_FLOOD)]
+			data = None
+			if msg.buffer_id == ofproto.OFP_NO_BUFFER:
+				data = msg.data
 			out = parser.OFPPacketOut(datapath=datapath, buffer_id=msg.buffer_id,
-					in_port=port, actions=actions, data=msg.data)
+					in_port=port, actions=actions, data=data)
 			datapath.send_msg(out)
 
 	def add_topo(self,src_dpid,dst_dpid,src_port_no,dst_port_no):
@@ -118,5 +121,3 @@ class Controller(app_manager.RyuApp):
 			'dst_port_no': dst_port_no
 		})
 		self.send(msg)
-
-	
