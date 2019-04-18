@@ -64,7 +64,7 @@ class Client(object):
 		try:
 			while self.status:
 				message = self.send_queue.get()
-				message += '\n'
+				#message += '\n'
 				self.socket.sendall(message)
 				hub.sleep(0.1)
 		finally:# disconnect
