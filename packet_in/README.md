@@ -21,12 +21,13 @@
 
     mn --topo linear,3 --mac --switch ovsk --controller remote
 
-6.手动创建一些流量，例如先设置好ARP再发送HTTP请求。
+6.在host里手动创建一些流量，例如先设置好ARP再发送HTTP请求。以下命令是在mininet命令行中运行的
+：
 
     h1 arp -s 10.0.0.24 11:11:11:11:11:11
     h1 curl 10.0.0.24:56
-或者写shell脚本或者使用ab压测：
-    
+在host里还可以写shell脚本或者使用ab压测：
+ 
     #!/bin/sh
     a=60
     while [ true ]
