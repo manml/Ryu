@@ -40,3 +40,5 @@
     ab -n 1000 -c 100 http://10.0.0.24
 
 目前该模块并不提供host之间的连通性，如有需要，读者可以自行添加。
+参考：SDN控制器性能测试白皮书
+https://www.sdnctc.com/home/views/default/resource/pdf/Performance.pdf
